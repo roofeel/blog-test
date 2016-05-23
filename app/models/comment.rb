@@ -15,4 +15,6 @@ class Comment < ActiveRecord::Base
       commentable.save
     end
   end
+
+
 end

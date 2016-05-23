@@ -1,0 +1,7 @@
+<% if @tagging.present? %>
+var content = '<%= j(render "tags/tag", tag: @tagging.tag) %>';
+var $content = $(content);
+$(".tags_list").prepend($content);
+<% else %>
+alert("Tag创建失败");
+<% end %>

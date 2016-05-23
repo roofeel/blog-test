@@ -3,6 +3,11 @@
   <p><%= @post.body %></p>
 </div>
 
+<div class="tags_list">
+  <%= render :partial => "tags/tag", :collection => @post.tags %>
+  <input id="tag_input" type="text" placeholder="输入tag" data-taggable-id="<%= @post.id %>" data-taggable-type="<%= @post.class.name%>">
+</div>
+
 <%= render :template => "comments/index" %>
 
 <div class="create_comment">

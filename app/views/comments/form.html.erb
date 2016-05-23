@@ -1,4 +1,5 @@
-<%= form_for @comment, url: post_comments_path(@comment.post_id), remote: true do |f| %>
+<%= form_for @comment, remote: true do |f| %>
+  <p><b>新评论</b></p>
   <p>
     <%= f.label :user %><br>
     <%= f.text_field :user %>
@@ -8,6 +9,9 @@
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </p>
+
+  <%= f.hidden_field :commentable_type %>
+  <%= f.hidden_field :commentable_id %>
 
   <p>
     <%= f.submit %>
