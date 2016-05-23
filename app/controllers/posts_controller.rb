@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.recent.paginate(page: params[:page], per_page: 20)
+    @posts = Post.load_comments.recent.paginate(page: params[:page], per_page: 20)
   end
 
   def show
