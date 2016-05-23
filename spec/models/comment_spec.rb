@@ -15,6 +15,11 @@ RSpec.describe Comment, type: :model do
 
   it "should auto set post lastest comment" do
     comment = create(:comment)
-    expect(comment.post.lastest_comment1_id).to eq(comment.id)
+    expect(comment.commentable.lastest_comment1_id).to eq(comment.id)
+  end
+
+  it "should be ok to create article comment" do
+    article_comment = create(:article_comment)
+    expect(article_comment.commentable_type).to eq("Article")
   end
 end

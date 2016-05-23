@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   validates :title, :body, :presence => true
-  has_many :comments
+  has_many :comments, :as => :commentable
 
   belongs_to :lastest_comment1, class_name: "Comment", foreign_key: "lastest_comment1_id"
   belongs_to :lastest_comment2, class_name: "Comment", foreign_key: "lastest_comment2_id"
