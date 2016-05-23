@@ -5,6 +5,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments.recent.paginate(page: params[:page], per_page: 20)
+    @comment = @post.comments.new
   end
 
   def create

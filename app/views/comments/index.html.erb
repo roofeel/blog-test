@@ -1,0 +1,9 @@
+<h4>评论列表</h4>
+
+<div class="comments-list">
+  <%= render partial: "comments/comment", collection: @comments %>
+</div>
+
+<div class="comments-footer">
+  <%= will_paginate @comments %>
+</div>

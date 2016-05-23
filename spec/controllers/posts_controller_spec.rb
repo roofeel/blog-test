@@ -33,12 +33,12 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "#create" do
-    it "should be ok if params validate" do
+    it "should be ok if params valid" do
       post :create, post: {title: "title", body: "body" }
       expect(response).to redirect_to(posts_path)
     end
 
-    it "should be fail if params invalidate" do
+    it "should be fail if params invalid" do
       post :create, post: { title: "title"}
       expect(response).not_to redirect_to(posts_path)
     end
@@ -47,19 +47,19 @@ RSpec.describe PostsController, type: :controller do
   describe "#update" do
     let(:new_post) { create :post }
 
-    it "should be ok if params validate" do
+    it "should be ok if params valid" do
       put :update, post: {title: "title updated"}, id: new_post.id
       expect(response).to redirect_to(posts_path)
     end
 
-    it "should be fail if params invalidate" do
+    it "should be fail if params invalid" do
       put :update, post: {title: ""}, id: new_post.id
       expect(response).not_to redirect_to(posts_path)
     end
   end
 
   describe "#destroy" do
-    it "should be ok if validate" do
+    it "should be ok if valid" do
       new_post = create(:post)
       expect {
         delete :destroy, id: new_post.id

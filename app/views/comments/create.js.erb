@@ -1,0 +1,8 @@
+<% if @success %>
+var content = '<%= j(render "comments/comment", comment: @comment) %>';
+var $content = $(content);
+$(".comments-list").prepend($content);
+$("#comment_user,#comment_body").val("");
+<% else %>
+  alert("评论创建失败");
+<% end %>

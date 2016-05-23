@@ -1,0 +1,15 @@
+<%= form_for @comment, url: post_comments_path(@comment.post_id), remote: true do |f| %>
+  <p>
+    <%= f.label :user %><br>
+    <%= f.text_field :user %>
+  </p>
+
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
