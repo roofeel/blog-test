@@ -1,0 +1,9 @@
+<h1>Welcome!</h1>
+
+<div class="posts-list">
+  <%= render partial: "posts/post", collection: @posts %>
+</div>
+
+<div class="posts-footer">
+  <%= will_paginate @posts %>
+</div>
